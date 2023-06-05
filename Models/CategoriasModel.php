@@ -6,8 +6,6 @@
 		public $strCategoria;
 		public $strDescripcion;
 		public $intStatus;
-
-		
 		public $strPortada;
 		public $strRuta;
 
