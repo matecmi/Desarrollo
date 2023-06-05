@@ -6,8 +6,8 @@
 	date_default_timezone_set('America/Lima');
 
 	//Datos de conexión a Base de Datos
-	//const DB_HOST = "192.168.18.155:3323";
-    const DB_HOST = "192.168.18.35:3323";
+	const DB_HOST = "192.168.18.155:3323";
+    //const DB_HOST = "192.168.18.35:3323";
 	const DB_NAME = "userbmbijou_tienda_virutal_db";
 	const DB_USER = "root";
 	const DB_PASSWORD = "12345678";
