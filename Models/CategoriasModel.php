@@ -9,6 +9,8 @@
 		public $strPortada;
 		public $strRuta;
 
+
+		
 		public function __construct()
 		{
 			parent::__construct();
