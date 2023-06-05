@@ -1,4 +1,5 @@
 <?php 
+			session_start();
 
 	require_once("Models/TCategoria.php");
 	require_once("Models/TProducto.php");
@@ -7,8 +8,6 @@
 		public function __construct()
 		{
 			parent::__construct();
-			session_start();
-
 		}
 
 		public function home()
