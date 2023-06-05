@@ -185,6 +185,9 @@ $infoPreguntas = !empty(getInfoPage(PPREGUNTAS)) ? getInfoPage(PPREGUNTAS)['cont
 							<li>
 								<a id="linkContacto" href="<?= base_url(); ?>/contacto">Contacto</a>
 							</li>
+							<li>
+								<a id="linkContacto" href="<?= base_url(); ?>/login">login</a>
+							</li>
 						</ul>
 					</div>
 
