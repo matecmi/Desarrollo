@@ -84,7 +84,7 @@ $infoPreguntas = !empty(getInfoPage(PPREGUNTAS)) ? getInfoPage(PPREGUNTAS)['cont
 </head>
 
 <body class="animsition" translate="no">
-	<!-- Modal -->
+	<!-- Modal 
 	<div class="modal fade" id="modalAyuda" tabindex="-1" aria-hidden="true">
 		<div class="modal-dialog modal-lg">
 			<div class="modal-content">
@@ -107,6 +107,7 @@ $infoPreguntas = !empty(getInfoPage(PPREGUNTAS)) ? getInfoPage(PPREGUNTAS)['cont
 			</div>
 		</div>
 	</div>
+	-->
 	<div id="divLoading">
 		<div>
 			<img src="<?= media(); ?>/images/loading.svg" alt="Loading">
@@ -212,7 +213,7 @@ $infoPreguntas = !empty(getInfoPage(PPREGUNTAS)) ? getInfoPage(PPREGUNTAS)['cont
 		<div class="wrap-header-mobile">
 			<!-- Logo moblie -->
 			<div class="logo-mobile">
-				<a href="<?= base_url(); ?>"><img src="<?= media() ?>/tienda/images/logo.png" alt="Tienda Virtual"></a>
+				<a href="<?= base_url(); ?>"><img src="<?= media() ?>/tienda/images/logo2.png" alt="Tienda Virtual"></a>
 			</div>
 
 			<!-- Icon header -->
@@ -251,9 +252,11 @@ $infoPreguntas = !empty(getInfoPage(PPREGUNTAS)) ? getInfoPage(PPREGUNTAS)['cont
 
 				<li>
 					<div class="right-top-bar flex-w h-full">
+						<!--
 						<a href="#" class="flex-c-m p-lr-10 trans-04" data-toggle="modal" data-target="#modalAyuda">
 							Help & FAQs
 						</a>
+						-->
 						<?php
 						if (isset($_SESSION['login'])) {
 							?>
@@ -292,10 +295,11 @@ $infoPreguntas = !empty(getInfoPage(PPREGUNTAS)) ? getInfoPage(PPREGUNTAS)['cont
 					<a href="<?= base_url(); ?>/nosotros">Nosotros</a>
 				</li>
 
+				<!--
 				<li>
 					<a href="<?= base_url(); ?>/sucursales">Sucursales</a>
 				</li>
-
+						-->
 				<li>
 					<a href="<?= base_url(); ?>/contacto">Contacto</a>
 				</li>
