@@ -13,7 +13,7 @@ var ultimoSegmento = segmentos.pop();
 console.log(ultimoSegmento);
 
 if (ultimoSegmento=="") {
-  inicio.style.color = "blue";
+  inicio.style.color = "#53B8B4";
   tienda.style.color = "#333";
   nosotros.style.color = "#333";
   contacto.style.color = "#333";
@@ -22,7 +22,7 @@ if (ultimoSegmento=="") {
 
 if (ultimoSegmento=="tienda") {
   inicio.style.color = "#333";
-  tienda.style.color = "blue";
+  tienda.style.color = "#53B8B4";
   nosotros.style.color = "#333";
   contacto.style.color = "#333";
 
@@ -31,7 +31,7 @@ if (ultimoSegmento=="tienda") {
 if (ultimoSegmento=="nosotros") {
   inicio.style.color = "#333";
   tienda.style.color = "#333";
-  nosotros.style.color = "blue";
+  nosotros.style.color = "#53B8B4";
   contacto.style.color = "#333";
 }
 
@@ -39,7 +39,7 @@ if (ultimoSegmento=="contacto") {
   inicio.style.color = "#333";
   tienda.style.color = "#333";
   nosotros.style.color = "#333";
-  contacto.style.color = "blue";
+  contacto.style.color = "#53B8B4";
 
 }
 
