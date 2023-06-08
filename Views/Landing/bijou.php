@@ -184,10 +184,10 @@
 
 
 
-    <section id="testimonial">
+    <section class="py-prueba" id="testimonial">
       <div class="container">
         <div class="row h-100">
-          <div class="col-lg-7 mx-auto text-center mb-6">
+          <div class="col-lg-7 mx-auto text-center mb-1">
             <?php
               $arrProductos=$data['productosLanding'];
               if(!empty($arrProductos)){
@@ -253,7 +253,7 @@
               src="<?= media();?>/landing/assets/img/gallery/aaaaaaa.png" alt="..."></div>
           <div class="col-lg-6 text-center">
             <h4 class="fs-2 pe-xxl-10">Visitanos en:</h4>
-            <a href="#"><h1 class="fs-4 pe-xxl-10">www.bmbijou.com</h1></a>
+            <a href="https://bmbijou.com/"><h1 class="fs-4 pe-xxl-10">www.bmbijou.com</h1></a>
           </div>
         </div>
       </div>

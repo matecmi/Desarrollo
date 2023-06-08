@@ -135,7 +135,7 @@ window.addEventListener('load', function() {
                             title: objData.msg
                         })
                         document.querySelector("#idProducto").value = objData.idproducto;
-                        document.querySelector("#containerGallery").classList.remove("notblock");
+                       document.querySelector("#containerGallery").classList.remove("notblock");
 
                         if(rowTable == ""){
                             tableProductos.api().ajax.reload();
@@ -222,16 +222,21 @@ tinymce.init({
 });
 
 function fntInputFile(){
+
     let inputUploadfile = document.querySelectorAll(".inputUploadfile");
     inputUploadfile.forEach(function(inputUploadfile) {
+
         inputUploadfile.addEventListener('change', function(){
+
             let idProducto = document.querySelector("#idProducto").value;
             let parentId = this.parentNode.getAttribute("id");
-            let idFile = this.getAttribute("id");            
+            let idFile = this.getAttribute("id");  
+
             let uploadFoto = document.querySelector("#"+idFile).value;
             let fileimg = document.querySelector("#"+idFile).files;
             let prevImg = document.querySelector("#"+parentId+" .prevImage");
             let nav = window.URL || window.webkitURL;
+
             if(uploadFoto !=''){
                 let type = fileimg[0].type;
                 let name = fileimg[0].name;
@@ -240,6 +245,8 @@ function fntInputFile(){
                     uploadFoto.value = "";
                     return false;
                 }else{
+
+
                     let objeto_url = nav.createObjectURL(this.files[0]);
                     prevImg.innerHTML = `<img class="loading" src="${base_url}/Assets/images/loading.svg" >`;
 
@@ -253,7 +260,10 @@ function fntInputFile(){
                     request.onreadystatechange = function(){
                         if(request.readyState != 4) return;
                         if(request.status == 200){
+                            console.log(request.responseText);
+
                             let objData = JSON.parse(request.responseText);
+
                             if(objData.status){
                                 prevImg.innerHTML = `<img src="${objeto_url}">`;
                                 document.querySelector("#"+parentId+" .btnDeleteImage").setAttribute("imgname",objData.imgname);
@@ -329,6 +339,7 @@ function fntDelItem(element){
 }
 
 function fntViewInfo(idProducto){
+
     let request = (window.XMLHttpRequest) ? 
                     new XMLHttpRequest() : 
                     new ActiveXObject('Microsoft.XMLHTTP');
@@ -386,6 +397,8 @@ function fntViewInfo(idProducto){
 }
 
 function fntEditInfo(element,idProducto){
+    console.log("entre a Editi");
+
     rowTable = element.parentNode.parentNode.parentNode;
     document.querySelector('#titleModal').innerHTML ="Actualizar Producto";
     document.querySelector('.modal-header').classList.replace("headerRegister", "headerUpdate");

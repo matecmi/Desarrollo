@@ -79,6 +79,7 @@
 			$arrVentaDias = array();
 			$dias = cal_days_in_month(CAL_GREGORIAN,$mes, $anio);
 			$n_dia = 1;
+			$ventaDia = array();
 			for ($i=0; $i < $dias ; $i++) { 
 				$date = date_create($anio."-".$mes."-".$n_dia);
 				$fechaVenta = date_format($date,"Y-m-d");
@@ -90,7 +91,7 @@
 				 		WHERE DATE(fecha) = '$fechaVenta' AND status = 'Completo' GROUP BY fecha";
 				$ventaDia = $this->select($sql);
 				$ventaDia['dia'] = $n_dia;
-				$ventaDia['total'] = $ventaDia['total'] == "" ? 0 : $ventaDia['total'];
+				$ventaDia['total'] = isset($ventaDia['total']) ? $ventaDia['total'] : 0;
 				$totalVentasMes += $ventaDia['total'];
 				array_push($arrVentaDias, $ventaDia);
 				$n_dia++;

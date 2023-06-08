@@ -3,7 +3,22 @@ let tableDescuentoProducto;
 let tableDescuentoPuntos;
 let rowTable = "";
 let divLoading = document.querySelector("#divLoading");
+
+const btnActionFormPuntos = document.getElementById("btnActionFormPuntos");
+
+// Agregar un event listener al botón
+btnActionFormPuntos.addEventListener("click", function() {
+    setTimeout(function() {
+
+        document.querySelector("#idDescuentoPorPuntos").value = "";
+        console.log("entre al metodo del boton");
+      }, 1000);    
+});
+
 document.addEventListener('DOMContentLoaded', function () {
+
+
+
     // DESCUENTOS POR PRODUCTOS
     tableDescuentoProducto = $('#tableDescuentoProducto').dataTable({
         "aProcessing": true,
@@ -169,6 +184,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 divLoading.style.display = "none";
                 return false;
             }
+
         }
     }
     // DESCUENTOS POR PUNTOS
@@ -291,8 +307,9 @@ document.addEventListener('DOMContentLoaded', function () {
                     if (objData.status) {
                         if (rowTable == "") {
                             tableDescuentoPuntos.api().ajax.reload();
-                            $("#formRegistroPorPuntos").trigger("reset")
-                            codigoAleatorio()
+                            $("#formRegistroPorPuntos").trigger("reset");
+                            document.querySelector("#idDescuentoPorPuntos").value = "";
+                            codigoAleatorio();
                         } else {
                            
 
@@ -309,8 +326,9 @@ document.addEventListener('DOMContentLoaded', function () {
                             
                             document.querySelector('#btnActionFormPuntos').classList.replace("btn-warning", "btn-primary");
                             document.querySelector('#btnTextPuntos').innerHTML = "Guardar";
-                            $("#txtTitpoPuntos").attr("disabled",false)
-                            $("#formRegistroPorPuntos").trigger("reset")
+                            $("#txtTitpoPuntos").attr("disabled",false);
+                            $("#formRegistroPorPuntos").trigger("reset");
+                            document.querySelector("#idDescuentoPorPuntos").value = "";
 
                             
                             
@@ -321,7 +339,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             rowTable.cells[2].innerHTML = htmlDesc;
                             rowTable.cells[3].textContent = fvalido;
                             rowTable.cells[5].innerHTML = htmlStatus;
-                            codigoAleatorio()
+                            codigoAleatorio();
 
                         }
                         formRegistroPorProducto.reset();
@@ -363,7 +381,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 divLoading.style.display = "none";
                 return false;
             }
+
+            $("#formRegistroPorPuntos").trigger("reset");
+
+            document.querySelector("#idDescuentoPorPuntos").value = "";
         }
+        $("#formRegistroPorPuntos").trigger("reset");
+
     }
     // BUSCAR REFERIDOS POR CLIENTE
     if (document.querySelector("#frmBuscarReferidos")) {
@@ -463,6 +487,9 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
 }, false);
+
+
+
 window.addEventListener('load', function () {
     fntListaProductos();
     fntListaClientesReferidos();
@@ -909,19 +936,19 @@ function codigoAleatorio() {
 $("#txtTitpoPuntos").on("change", function () {
     let sel = this.value;
     if (sel == "Puntos") {
-        codigoAleatorio()
-        $("#txtPuntos").val("")
+        codigoAleatorio();
+        $("#txtPuntos").val("");
         document.querySelector(".tiposel").classList.remove("col-md-6");
         document.querySelector(".tiposel").classList.add("col-md-4");
-        $(".tipopuntos").show()
-        $("#txtTotalDescuentoPuntos").val("")
-        $(".evnipunt").text("Puntos:")
-        $("#txtTotalDescuentoPuntos").prop("disabled",false)
-        $("#fValido").prop("disabled",false)
-        $("#txtTotalDescuentoPuntos").css("cursor","auto")
-        $("#fValido").css("cursor","auto")
-        $("#txtCod_cupon").css("cursor","auto")
-        $("#txtCod_cupon").prop("disabled",false)
+        $(".tipopuntos").show();
+        $("#txtTotalDescuentoPuntos").val("");
+        $(".evnipunt").text("Puntos:");
+        $("#txtTotalDescuentoPuntos").prop("disabled",false);
+        $("#fValido").prop("disabled",false);
+        $("#txtTotalDescuentoPuntos").css("cursor","auto");
+        $("#fValido").css("cursor","auto");
+        $("#txtCod_cupon").css("cursor","auto");
+        $("#txtCod_cupon").prop("disabled",false);
 
     } else
     if (sel == "Cupón libre") {

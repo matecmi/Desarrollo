@@ -84,8 +84,9 @@ class Descuentos extends Controllers{
                 $vigenciaProducto = $_POST['vigenciaProducto'];
                 $request_user = "";
 
-                if($idDescuento == "")
+                if($idDescuento == "" || $idDescuento==0)
                 {
+
                     $option = 1;
                     if($_SESSION['permisosMod']['w']){
                         $request_user = $this->model->insertDescuentoProducto($intIdProducto,
@@ -95,6 +96,7 @@ class Descuentos extends Controllers{
                                                                             $vigenciaProducto);
                     }
                 }else{
+
                     $option = 2;
                     if($_SESSION['permisosMod']['u']){
                         $request_user = $this->model->updateDescuentoProducto($idDescuento,
@@ -221,9 +223,14 @@ class Descuentos extends Controllers{
                 $fvalido = $_POST['fvalido'];
                 $descuentopertenece = $_POST['descuentopertenece'];
                 $request_user = "";
+                
+                if($fvalido== "0000-00-00" || $fvalido=="" || $fvalido == null){
+                    $fvalido="1970-01-01";
+
+                }
 
 
-                if($idDescuentoAdd == ""){
+                if($idDescuentoAdd == "" || $idDescuentoAdd==0){
                     $option = 1;
                     if($_SESSION['permisosMod']['w']){
                         $request_user = $this->model->insertDescuentoPorPuntos($tipopuntos,

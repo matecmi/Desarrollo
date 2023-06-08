@@ -1,16 +1,16 @@
 <?php 
 	//const BASE_URL = "https://bmbijou.com";
-	const BASE_URL = "http://localhost:86";
+	const BASE_URL = "http://localhost/Desarrollo";
 /////////////////////////////
 	//Zona horaria
 	date_default_timezone_set('America/Lima');
 
 	//Datos de conexión a Base de Datos
-	const DB_HOST = "192.168.18.155:3323";
+	const DB_HOST = "localhost:3306";
     //const DB_HOST = "192.168.18.35:3323";
 	const DB_NAME = "userbmbijou_tienda_virutal_db";
 	const DB_USER = "root";
-	const DB_PASSWORD = "12345678";
+	const DB_PASSWORD = "";
 	const DB_CHARSET = "utf8";
 
 	//Producción

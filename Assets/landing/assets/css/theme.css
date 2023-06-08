@@ -3557,8 +3557,8 @@ fieldset:disabled .btn {
 
 .btn-secondary {
   color: #FFFEFE;
-  background-color: #FE7A15;
-  border-color: #FE7A15;
+  background-color: #53B8B4;
+  border-color: #53B8B4;
 }
 
 .btn-secondary:hover {
@@ -9128,7 +9128,11 @@ fieldset:disabled .btn {
 
 .py-7 {
   padding-top: 5rem !important;
-  padding-bottom: 5rem !important;
+  padding-bottom: 0rem !important;
+}
+.py-prueba {
+  padding-top: 0rem !important;
+  padding-bottom: 2rem !important;
 }
 
 .py-8 {
@@ -9503,7 +9507,7 @@ fieldset:disabled .btn {
 
 /* rtl:end:remove */
 .text-primary {
-  color: #3011BC !important;
+  color: #53B8B4 !important;
 }
 
 .text-secondary {
@@ -17575,9 +17579,8 @@ ul {
 }
 
 .bg-primary-gradient {
-  background: -webkit-gradient(linear, left top, right top, from(#3011bc), to(#7e11bc));
-  background: -o-linear-gradient(left, #3011bc, #7e11bc);
-  background: linear-gradient(90deg, #3011bc, #7e11bc);
+
+  background-color: #53B8B4;
 }
 
 .bg-secondary-gradient {
@@ -17611,9 +17614,6 @@ ul {
 
 .bg-offcanvas-right::before {
   position: absolute;
-  background: -webkit-gradient(linear, left top, right top, from(#7e11bc), to(#7e11bc));
-  background: -o-linear-gradient(left, #7e11bc, #7e11bc);
-  background: linear-gradient(90deg, #7e11bc, #7e11bc);
   content: "";
   height: 100%;
   width: 1000%;
